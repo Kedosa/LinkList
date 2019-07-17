@@ -1,0 +1,2 @@
+<a name='####type####'></a>
+<table class='table col-sm-6 table-hover table-border'>

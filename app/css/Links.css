@@ -1,0 +1,45 @@
+body{
+    background-color: #b3b3b3;
+}
+nav{
+    background-color: grey;
+    color: black;
+    border-color: #b3b3b3;
+}
+a {
+    color: black;
+}
+.btn{
+    background-color: #cf3232;;
+}
+tbody{
+    background-color: #951919e6;
+    color: ghostwhite;
+}
+tbody a{
+    color: ghostwhite;
+}
+nav a:hover{
+    color: ghostwhite;
+}
+.btn:hover{
+    color: ghostwhite;
+}
+a:hover{
+    color: black;
+}
+a.active:hover{
+    color: black;
+}
+table{
+    align-content: center;
+}
+.jumbotron{
+    background-color: #cbd4de;
+}
+nav div.navbar-header{
+    width: 100%;
+}
+div form{
+float: right;
+}

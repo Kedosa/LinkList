@@ -1,0 +1,6 @@
+<table class='table col-sm-6 table-hover'>
+    <thead class='thead-dark'>
+        <th>Suchergebnisse ohne Tabelle</th>
+        <th>Kommentare</th>
+    </thead>
+    <tbody>

@@ -1,0 +1,7 @@
+<thead class='thead-dark'>
+    <tr>
+        <th class='col-sm-3'>####headline####</th>
+        <th class='col-sm-3 '>Kommentar</th>
+    </tr>
+</thead>
+<tbody>
