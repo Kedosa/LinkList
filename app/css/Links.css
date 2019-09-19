@@ -1,45 +1,272 @@
-body{
-    background-color: #b3b3b3;
-}
 nav{
-    background-color: grey;
-    color: black;
-    border-color: #b3b3b3;
+    height:         50px;
+    border-color:   #b3b3b3;
 }
-a {
-    color: black;
+form.form-inline{
+    padding-top:    0px;
+}
+
+.search{
+    padding-top:    5px;
+    display:        inline-flex;
+}
+
+h4{
+    margin-top:     20px;
+    text-align:     center;
+}
+h2.willkommen {
+    font-size: 2rem;
+    text-align: center;
+}
+
+a.navbar-brand{
+    float:          right;
+    padding-top:    10px;
+}
+form.navbar-brand{
+    width:          20%;
+    float:          right;
+}
+.table thead tr th{
+    /*background-color: #303030;*/
+}
+
+.navHeader a, .navHeader div button{
+    /*color: #E8E6DF;*/
+}
+
+div.dropdown .dropdown_content button{
+    /*background-color: #f2f2f2;*/
+    /*color: #E8E6DF;*/
+}
+
+tbody{
+    /*color: #E8E6DF;*/
+}
+
+tbody a, .btn:hover, button.navbar-toggle:hover, .searchBtn:hover, nav a{
+    color:          black;
+}
+
+tbody , tbody a, tbody a:hover{
+    color:          black;
+}
+
+table a{
+    padding-left:   5px;
+}
+
+
+a, .navbar-brand{
+    /*color: #E8E6DF;*/
+}
+
+.navbar-brand{
+    width:          100%;
 }
 .btn{
-    background-color: #cf3232;;
+    margin-top:     5px;
 }
-tbody{
-    background-color: #951919e6;
-    color: ghostwhite;
+div.navHeader{
+    /*height: 48px;*/
+    /*padding-top: 3px;*/
 }
-tbody a{
-    color: ghostwhite;
+
+button, nav span{
+    /*color: #E8E6DF;*/
+    color:          white;
+  background-color: #343A40;
 }
-nav a:hover{
-    color: ghostwhite;
+
+table.table {
+    align-content:  center;
+    margin-top:     45px;
+    max-width:      100%;
 }
-.btn:hover{
-    color: ghostwhite;
+
+div.content >  br + a + table.table {
+    margin-top:     30px;
 }
-a:hover{
-    color: black;
+
+nav div.navbar-header, tr{
+    width:          100%;
 }
-a.active:hover{
-    color: black;
+
+.search{
+float:              right;
+}
+
+td, th{
+    width:          33.3333%;
+}
+
+button.navbar-toggle{
+    border:         none;
+}
+
+.searchBtn{
+    /*color: #20233C;*/
+    border:         none;
+}
+
+.navHeader{
+    float:          left;
+    display:        inline-flex;
+}
+.dropdown_btn{
+    /*background-color: #343a40 !important;*/
+    border:         none;
+}
+div.dropdown_content{
+    display:        none;
+    margin-top:     0;
+    min-width:      195px;
+    position:       absolute;
+    box-shadow:     0 6px 8px 1px rgba(0,0,0,0.5);
+}
+
+.dropdown_content a{
+    float:          left;
+}
+
+div.dropdown_content button{
+    border:         none;
+    text-align:     left;
+}
+
+.dropdown:hover .dropdown_content {
+    display:        grid;
+}
+
+.dropdown{
+    /*height: 48px;*/
+}
+
+.navbar{
+    padding:        0 16px;
+}
+
+.table td, .table th {
+    padding:        .75rem;
+    vertical-align: top;
+    /*border-top: 1px solid #dee2e6;*/
 }
 table{
-    align-content: center;
+    border:         none;
 }
-.jumbotron{
-    background-color: #cbd4de;
+.table td{
+    /*background-color: #965166;*/
 }
-nav div.navbar-header{
-    width: 100%;
+.bg-dark{
+    color:          white;
+    border-color:   grey;
 }
-div form{
-float: right;
+
+.table-warning thead th{
+    border-color:   #6b6b6b;
+}
+.dropdown_content button{
+}
+
+.dropdown_btn:hover{
+    color:          white;
+}
+
+.empty{
+    display:        none;
+}
+.generell_allgemein td, .generell_bereitschaft td, .generell_dokumentation td,
+.generell_weitere_zugaenge td, .generell_confluence_wichtig td{
+    border-color:   cornflowerblue;
+}
+
+.interred_systeme td, .interred_weitere_zugaenge td, .interred_dokumentation td{
+    border-color:   indianred;
+}
+
+.test td{
+    border-color:   yellow;
+}
+
+.leoevent td, .iapps-workflow td{
+    border-color:   black;
+}
+
+.fa-star{
+    color:          grey;
+    border:         none;
+    background-color: inherit;
+}
+
+.addFavorite{
+    color:          #f2ad1e;
+}
+
+.reset{
+    position:       absolute;
+    top:            5px;
+    right:          75px;
+    height:         38px;
+    color:          #17a2b8;
+    padding-bottom: 3px;
+    font-weight:    bold;
+    background-color: inherit;
+    border:         none;
+}
+
+.userBtn{
+    border:         none;
+    background-color: inherit;
+    font-size:      inherit;
+}
+
+.userForm{
+    font-size:      25px;
+    width:          38px;
+}
+
+.login{
+    width:          50%;
+    float:          left;
+}
+
+.register{
+    width:          50%;
+    float:          right;
+}
+.inputDesc{
+    width:          85px;
+}
+
+.loginBtn, .registerBtn{
+    margin-left: 84px;
+}
+
+.login, .register{
+    margin-top:     30px;
+    max-width:      50%;
+}
+.loginItems{
+    float:          right;
+    margin-right:   50px;
+}
+
+.login{
+    border-right: 1px solid #17a2b8;
+    height: 400px;
+}
+
+.registerItems{
+    margin-left:    50px;
+}
+
+.logoutItems{
+    margin-top: 50px;
+    margin-left: 48%;
+}
+
+.logoutBtn{
+    margin-top: 10px;
+    margin-left: 25px;
 }

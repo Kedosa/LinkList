@@ -4,6 +4,8 @@
 namespace app\element;
 use app\helper\ArrayHelper;
 use app\helper\TplHelper;
+use app\helper\HtmlHelper;
+//use app\service\UserDB;
 
 abstract class BaseElement implements ElementInterface
 {
@@ -12,17 +14,19 @@ abstract class BaseElement implements ElementInterface
     protected $tplHelper;
     protected $template;
     protected $arrayHelper;
+    protected $htmlHelper;
+//    protected $userDb;
     protected $tag;
-    var $counter;
     var $type;
 
     public function __construct($data, $tag, $dataKey, $template)
     {
-        $this->template = $template;
-        $this->data = $data;
-        $this->tag = $tag;
-        $this->dataKey = $dataKey;
-        $this->tplHelper = new TplHelper();
-        $this->arrayHelper = new ArrayHelper();
+        $this->template     = $template;
+        $this->data         = $data;
+        $this->tag          = $tag;
+        $this->dataKey      = $dataKey;
+        $this->tplHelper    = new TplHelper();
+        $this->arrayHelper  = new ArrayHelper();
+        $this->htmlHelper   = new HtmlHelper();
     }
 }

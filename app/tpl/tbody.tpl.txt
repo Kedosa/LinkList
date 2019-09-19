@@ -1,5 +1,6 @@
-<tr>
-
-    <td class='col-3'><span class='glyphicon glyphicon-asterisk'></span><a href="####link####" target="####target####">####name####</a></td>
-    <td class='col-3'>####comment####</td>
+<tr class='####type####'>
+    <td><span class='fa ####icon####'></span><a href="####link####" target="####target####"> ####name####</a></td>
+    <td>####type####</td>
+    <td>####comment####</td>
+    <td><button type='button' class="fa fa-star" onclick="favorite(this)" value="####name####"></button></td>
 </tr>

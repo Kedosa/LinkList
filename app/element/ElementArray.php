@@ -17,9 +17,6 @@ class ElementArray extends BaseElement
             $this->template = $tableData;
             $res = $tableData;
         }
-//        if(is_string($res)){
-//
-//        }
         return $res;
     }
 }

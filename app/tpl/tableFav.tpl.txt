@@ -1,0 +1,14 @@
+<h2 class='willkommen'>Hallo ####username#### hier werden deine ausgewählten Links angezeigt</h2>
+<form name='addFavorite' class='favoriteUser' action='index.php' method='post'>
+   	<input type='hidden' id='deleteFav' name='deleteFav'/>
+    <input type='hidden' name='user' value='user' />
+    <input type='submit' name='updateFav' value='Favorit entfernen' onclick='getNonFavorites();' />
+</form>
+<table id="favTable" class="table table-striped table-border table-hover">
+        <thead class="bg-info">
+        <tr>
+            <th>Tabelle mit Links</th>
+            <th>Kategorie</th>
+            <th colspan="2">Kommentare</th>
+        </tr>
+    </thead>
