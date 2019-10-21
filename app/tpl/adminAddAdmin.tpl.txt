@@ -1,0 +1,3 @@
+<label class='inputDesc'>Passwort: </label><input type='text' name='newPassword'/><br />
+<label class='inputDesc'>Admin: </label><input type='checkbox' name='admin_state' class='adminCheck' ####admin_state####/><br />
+<input type='hidden' name='adminConfig' value='1'>

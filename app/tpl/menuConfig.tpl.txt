@@ -1,0 +1,29 @@
+<div class='menuManage'>
+    <h2>Der Link ####linkName#### wird bearbeitet</h2>
+    <div class='adjustForm'>
+        <form action='index.php' method='POST'>
+            <input type='hidden' name='id' value='####id####'/>
+            <label class='inputDesc'>Name: </label><input type='text' name='name' placeholder='####linkName####'/><br />
+            <label class='inputDesc'>Link: </label><input type='text' name='link' placeholder='####link####'/><br />
+            <label class='inputDesc'>Kommentar: </label><input type='text' name='comment' placeholder='####comment####'/><br />
+            <div>Is set ####icon####</div>
+            <label class='inputDesc'>Icons: </label>
+            <select name='iconId' class='selectIcon'>
+                <option value='0'>Bitte wähle eine Kategorie</option>
+                ####iconOption####
+            </select>
+            <br />
+            <div>Is set ####subcategory####</div>
+            <label class='inputDesc'>Categories: </label>
+            <select name='categoryId' class='selectCategory'>
+                <option value='0'>Bitte wähle eine Kategorie</option>
+                ####categoryOption####
+            </select>
+            <br />
+            <br />
+            <input type='submit' name='table[saveManage]' class='registerBtn saveManage' value='Speichern'/>
+            <input type='submit' name='table[deleteData]' class='registerBtn deleteUser' value='Link löschen'/>
+            <input type='submit' name='table[abortManage]' class='registerBtn abortManage' value='Abbrechen'/>
+        </form>
+    </div>
+</div>

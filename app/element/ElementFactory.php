@@ -17,6 +17,9 @@ class ElementFactory
         elseif($dataKey === 'category'){
             $element = new ElementLink($data, $tag, $dataKey, $template);
         }
+        elseif($dataKey === 'user'){
+            $element = new ElementUser($data, $tag, $dataKey, $template);
+        }
         elseif(is_array($data)){
             $element  = new ElementArray($data, $tag, $dataKey, $template);
         }

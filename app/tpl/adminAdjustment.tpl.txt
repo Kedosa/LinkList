@@ -1,0 +1,4 @@
+<br />
+<h5>Admin-Rechte</h5>
+<button name='user[userManagement]' value='1'><span class="fa fa-users"></span> User Verwaltung</button><br />
+<button name='table[dbManagement]' value='1'><span class="fa fa-database"></span> Datenbank Verwaltung</button><br />

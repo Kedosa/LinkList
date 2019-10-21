@@ -253,13 +253,13 @@ $menu = array(
                 'link' => 'https://atlus.com/p5r/',
                 'icon' => "fa-star",
                 'comment' => "",
-                'type' => 'test'
+                'type' => 'kevin_test'
             )
         )
     ),
     'poo' => array(
         'headline' => 'persona',
-        'category' => 'Atlus',
+        'category' => 'atlus',
         'persona 5 royal' => array(
             'block' => array(
                 'name' => "Persona 5 Royal",
@@ -267,7 +267,7 @@ $menu = array(
                 'link' => 'http://s98wapmo01.circit-net.de/bhkal_2017/',
                 'icon' => "fa-star",
                 'comment' => "",
-                'type' => 'persona'
+                'type' => 'atlus_persona'
             )
         )
     ),//confluence_wichtig
@@ -414,7 +414,7 @@ $menu = array(
                 'link' => 'http://leorp.rbpd.de/leoevent/start.html',
                 'icon' => "fa-cog",
                 'comment' => "",
-                'type' => 'leoevent'
+                'type' => 'other_leoevent'
             )
         ),
         'wz_prod' => array(
@@ -424,7 +424,7 @@ $menu = array(
                 'link' => 'http://leowz.rbpd.de/leoevent/start.html',
                 'icon' => "fa-cog",
                 'comment' => "",
-                'type' => 'leoevent'
+                'type' => 'other_leoevent'
             )
         ),
         'zva_prod' => array(
@@ -434,7 +434,7 @@ $menu = array(
                 'link' => 'http://149.221.2.20:8082/leoevent/',
                 'icon' => "fa-cog",
                 'comment' => "",
-                'type' => 'leoevent'
+                'type' => 'other_leoevent'
             )
         )
     ),
@@ -448,7 +448,7 @@ $menu = array(
                 'link' => 'http://s98wapmo01.circit-net.de/workflow_iapps/?date=0',
                 'icon' => "fa-cog",
                 'comment' => "",
-                'type' => 'iapps-workflow'
+                'type' => 'other_iapps-workflow'
             )
         ),
         'web-epaper' => array(
@@ -458,7 +458,7 @@ $menu = array(
                 'link' => 'https://rp-epaper.s4p-iapps.com/intranet/',
                 'icon' => "fa-cog",
                 'comment' => "",
-                'type' => 'iapps-workflow'
+                'type' => 'other_iapps-workflow'
             )
         )
     )

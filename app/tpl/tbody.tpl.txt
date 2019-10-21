@@ -1,6 +1,6 @@
 <tr class='####type####'>
-    <td><span class='fa ####icon####'></span><a href="####link####" target="####target####"> ####name####</a></td>
+    <td><span class='fa ####icon####'></span><a href="####link####" target="_blank"s> ####linkName####</a></td>
     <td>####type####</td>
     <td>####comment####</td>
-    <td><button type='button' class="fa fa-star" onclick="favorite(this)" value="####name####"></button></td>
+    <td><button type='button' class="fa fa-star ####favorite####" onclick="####jsFunction####" value="####linkName####"></button></td>
 </tr>

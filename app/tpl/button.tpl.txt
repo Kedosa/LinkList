@@ -1,1 +1,1 @@
-<button class='####category####' onclick='filterCategory(this)' name='filterBy'  value="####type####">####headline####</button>
+<button class='####name####' onclick='filterCategory(this)' name='filterBy'  value="####type####">####subcategory####</button>

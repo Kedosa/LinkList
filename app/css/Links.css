@@ -20,6 +20,13 @@ h2.willkommen {
     text-align: center;
 }
 
+.adjust{
+    color: #343a40;
+    background-color: #f8f9fa;
+    border: none;
+    font-size: 40px;
+}
+
 a.navbar-brand{
     float:          right;
     padding-top:    10px;
@@ -189,7 +196,7 @@ table{
     border-color:   yellow;
 }
 
-.leoevent td, .iapps-workflow td{
+.other_leoevent td, .other_iapps-workflow td{
     border-color:   black;
 }
 
@@ -240,7 +247,7 @@ table{
 }
 
 .loginBtn, .registerBtn{
-    margin-left: 84px;
+    margin-left:    84px;
 }
 
 .login, .register{
@@ -253,8 +260,9 @@ table{
 }
 
 .login{
-    border-right: 1px solid #17a2b8;
-    height: 400px;
+    border-right:   1px solid #17a2b8;
+    border-right:   1px solid #17a2b8;
+    height:         400px;
 }
 
 .registerItems{
@@ -269,4 +277,73 @@ table{
 .logoutBtn{
     margin-top: 10px;
     margin-left: 25px;
+}
+
+.userCanvas {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.fa-bars, .fa-times{
+    font-size:  25px!important;
+    cursor:     pointer;
+    position: absolute;
+    top: 60px;
+    left: 5px;
+}
+
+#closeMenu {
+    font-size:  25px;
+    position:   absolute;
+    top:        60px;
+    left:       200px;
+}
+#userMenu {
+    top:        20px;
+    position:   relative;
+    left:       15px;
+}
+div#userMenu form button{
+    border:     none;
+    margin-bottom: 10px;
+}
+button span.fa-star{
+    color:      white;
+}
+.hide{
+    display:    none !important;
+}
+
+.saveManage{
+    margin-left:   0;
+}
+.adjustForm, .userManage{
+    margin-top: 4%;
+    text-align: center;
+}
+.adjustForm label{
+    text-align: left;
+    width:          120px;
+}
+
+.dataCog {
+    border: none;
+    background-color: unset;
+    color: #343a40;
+}
+
+.userCog{
+    border: none;
+    background-color: unset;
+    color: #343a40;
+}
+.addLink{
+    float: right;
 }

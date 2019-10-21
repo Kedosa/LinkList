@@ -1,8 +1,8 @@
 <div class="dropdown">
-    <button type='button' class="btn btn-dark dropdown-toggle dropdown_btn" id='dropdown####category####' aria-haspopup='true' aria-expanded='false'>
-    ####category####
+    <button type='button' class="btn btn-dark dropdown-toggle dropdown_btn"  onclick='filterCategory(this)' id='dropdown####name####' value='####name####' aria-haspopup='true' aria-expanded='false'>
+    ####name####
     </button>
-    <div class="dropdown_content" aria-labelledby='dropdown####category####'>
-    ####link####category########
+    <div class="dropdown_content" aria-labelledby='dropdown####name####'>
+    ####link####name########
     </div>
 </div>

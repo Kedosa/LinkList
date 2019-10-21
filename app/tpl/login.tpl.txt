@@ -5,7 +5,7 @@
             <form name='loginUser' class='loginUser' action='index.php' method='post'>
                 <label class='inputDesc'>UserName: </label><input type='text' name='username' /><br />
                 <label class='inputDesc'>Passwort: </label><input type='password' name='password' /><br />
-                <input type='submit' name='login' class='loginBtn' value='Anmelden'/>
+                <input type='submit' name='user[login]' class='loginBtn' value='Anmelden'/>
             </form>
         </div>
     </div>
@@ -18,7 +18,7 @@
                 <label class='inputDesc'>Username: </label><input type='text' name='regUsername'/><br />
                 <label class='inputDesc'>E-Mail: </label><input type='email' name='regE-mail'/><br />
                 <label class='inputDesc'>Passwort: </label><input type='password' name='regPassword'/><br />
-                <input type='submit' name='register' class='registerBtn' value='Registrieren'/>
+                <input type='submit' name='user[register]' class='registerBtn' value='Registrieren'/>
             </form>
         </div>
     </div>

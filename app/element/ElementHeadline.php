@@ -9,16 +9,17 @@ class ElementHeadline extends BaseElement
 
         if($this->tag === 'table'){
             $tableBeginContent = $this->tplHelper->searchTemplate('tableBegin');
-//            $tableEndContent = $this->tplHelper->searchTemplate('tableEnd');
             $res = $tableBeginContent.$this->template;
             if(!empty($this->template)){
                 $res = $this->template;
             }
         }
-        elseif($this->tag === 'nav'){
-            $navTpl = $this->tplHelper->searchTemplate('button');
-            $navItem = $this->replaceContentFile($navTpl, $token, $this->data);
-            $res = $this->template.$navItem;
+        if($this->tag === 'tableAdjust'){
+            $tableBeginContent = $this->tplHelper->searchTemplate('tableConfig');
+            $res = $tableBeginContent.$this->template;
+            if(!empty($this->template)){
+                $res = $this->template;
+            }
         }
         elseif($this->tag === 'searched'){
             $navTpl = $this->tplHelper->searchTemplate('button');

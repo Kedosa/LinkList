@@ -1,1 +1,1 @@
-<a class='####category####' href="#####type####">####headline####</a>
+<a class='####name####' href="####type####">####subcategory####</a>

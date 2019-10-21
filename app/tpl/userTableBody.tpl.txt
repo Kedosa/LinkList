@@ -1,0 +1,8 @@
+<tr>
+    <td>####id####</td>
+    <td>####username####</td>
+    <td>####admin_state####</td>
+    <td><button name='user[userToManage]' class='userCog' value='####username####'>
+    <i class="fa fa-cog"></i>
+    </button></td>
+</tr>

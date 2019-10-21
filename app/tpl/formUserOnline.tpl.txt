@@ -1,12 +1,4 @@
-<form name='addFavorite' class='favoriteUser' action='index.php' method='post'>
-    <input type='submit' name='updateFav' value='Favorisieren' onclick='getFavorites();getNonFavorites();'>
-    ####table####
-	<input type='hidden' id='newFav' name='addFav'/>
-	<input type='hidden' id='deleteFav' name='deleteFav'/>
-	<script type='text/javascript'>
-
-        highlightStars(####fav####);
-    </script>
-	<input type='submit' name='updateDb' value='Db aktualisieren'/>
-    <input type='submit' name='updateFav' value='Favorisieren' onclick='getFavorites();getNonFavorites();' />
-</form>
+####table####
+<script type='text/javascript'>
+    highlightStars(####fav####);
+</script>

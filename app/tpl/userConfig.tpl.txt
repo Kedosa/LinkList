@@ -1,0 +1,15 @@
+<div class='userManage'>
+    <h2>Es wird das Profil von ####username#### bearbeitet</h2>
+    <div class='adjustForm'>
+        <form action='index.php' method='POST'>
+            <input type='hidden' name='id' value='####id####'/>
+            <label class='inputDesc'>Vorname: </label><input type='text' name='firstName' placeholder='####firstname####'/><br />
+            <label class='inputDesc'>Name: </label><input type='text' name='name' placeholder='####name####'/><br />
+            <label class='inputDesc'>E-Mail: </label><input type='email' name='email' placeholder='####email####'/><br />
+            ####adjustments####
+            <input type='submit' name='user[saveManage]' class='registerBtn saveManage' value='Speichern'/>
+            <input type='submit' name='user[deleteUser]' class='registerBtn deleteUser' value='Profil löschen'/>
+            <input type='submit' name='user[abortManage]' class='registerBtn abortManage' value='Abbrechen'/>
+        </form>
+    </div>
+</div>

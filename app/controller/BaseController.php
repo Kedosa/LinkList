@@ -2,24 +2,29 @@
 
 namespace app\controller;
 use       app\service\UserDB,     app\service\Session,
-          app\helper\ArrayHelper;
+          app\helper\ArrayHelper, app\helper\TplHelper;
 
 
 abstract class BaseController
 {
     protected $session;
     protected $arrayHelper;
+    protected $tplHelper;
+    protected $cfg;
 
     public function __construct()
     {
         $this->session      = new Session();
         $this->arrayHelper  = new ArrayHelper();
+        $this->tplHelper    = new TplHelper();
     }
 
     public function dbConnection()
     {
-        $cfg        = include_once __DIR__.'/../config.php';
-        $db         = new UserDB($cfg['db']);
+        if(empty($this->cfg)){
+            $this->cfg    = include __DIR__.'/../config.php';
+        }
+        $db     = new UserDB($this->cfg['db']);
         return $db;
     }
 }

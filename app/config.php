@@ -2,7 +2,7 @@
 return array(
     'db' => array(
         'host'      => 'localhost',
-        'dbname'    => 'linksdb',
+        'dbname'    => 'menudb',
         'user'      => 'root',
         'pw'        => '',
         'charset'   => 'UTF8'

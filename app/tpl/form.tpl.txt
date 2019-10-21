@@ -1,0 +1,3 @@
+<form name='tableForm' action='index.php' method='POST'>
+####table####
+</form>

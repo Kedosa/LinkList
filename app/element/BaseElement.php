@@ -15,9 +15,7 @@ abstract class BaseElement implements ElementInterface
     protected $template;
     protected $arrayHelper;
     protected $htmlHelper;
-//    protected $userDb;
     protected $tag;
-    var $type;
 
     public function __construct($data, $tag, $dataKey, $template)
     {

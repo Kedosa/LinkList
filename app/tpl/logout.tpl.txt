@@ -1,8 +1,0 @@
-<div class='logout'>
-    <div class='logoutItems'>
-        <h2>Abmelden</h2>
-        <form name='logoutUser' class='logoutUser' action='index.php' method='post'>
-            <input type='submit' name='logout' class='logoutBtn' value='Abmelden'/>
-        </form>
-    </div>
-</div>

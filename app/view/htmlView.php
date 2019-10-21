@@ -18,11 +18,11 @@ $html = <<<EOF
         $nav                     
                 <div class='search'>
                     <form method="post" name='userOutput' class='userForm'>
-                        <button type='submit' value='user' name='user' class='userBtn'><span class="fa fa-user-circle"></span></button>
+                        <button type='submit' value='user' name='user[user]' class='userBtn'><span class="fa fa-user-circle"></span></button>
                     </form>
                     <form name='searchInArray' class='form-inline navbar-brand' action='index.php' method='GET'>
                         <input class='form-control mr-sm-2' id='filterInput' onkeyup='filterString()' type='text' name='searchValue' placeholder='search' value="$searched"> 
-                        <input type='reset' value='x' class='reset'/>
+                        <button class='reset' type="button" id='resetBtn' onclick='resetForm()'>x</button>
                         <button class='searchBtn' type='submit'><span class="fa fa-search"></span>
                         </button>
                     </form>
