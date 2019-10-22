@@ -5,6 +5,9 @@ namespace app\element;
 
 class ElementArray extends BaseElement
 {
+    /**
+     * @return mixed|string|null
+     */
     public function getValues()
     {
         $res = NULL;

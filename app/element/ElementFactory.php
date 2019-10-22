@@ -4,9 +4,20 @@ namespace app\element;
 class ElementFactory
 {
     protected static $factory = null;
+
+    /**
+     * ElementFactory constructor.
+     */
     protected function __construct(){
     }
 
+    /**
+     * @param $data
+     * @param $tag
+     * @param null $dataKey
+     * @param null $template
+     * @return ElementArray|ElementHeadline|ElementLink|ElementUser|null
+     */
     public function getElement($data, $tag, $dataKey = NULL, $template = NULL){
         if($dataKey === 'headline'){
             $element = new ElementHeadline($data, $tag, $dataKey, $template);
@@ -22,6 +33,9 @@ class ElementFactory
         }
         elseif(is_array($data)){
             $element  = new ElementArray($data, $tag, $dataKey, $template);
+        }
+        elseif(empty($data)){
+            $element = NULL;
         }
         return $element;
     }

@@ -21,7 +21,7 @@ $html = <<<EOF
                         <button type='submit' value='user' name='user[user]' class='userBtn'><span class="fa fa-user-circle"></span></button>
                     </form>
                     <form name='searchInArray' class='form-inline navbar-brand' action='index.php' method='GET'>
-                        <input class='form-control mr-sm-2' id='filterInput' onkeyup='filterString()' type='text' name='searchValue' placeholder='search' value="$searched"> 
+                        <input class='form-control mr-sm-2' id='filterInput' onkeyup='filterString(this)' type='text' name='searchValue' placeholder='search' value="$searched"> 
                         <button class='reset' type="button" id='resetBtn' onclick='resetForm()'>x</button>
                         <button class='searchBtn' type='submit'><span class="fa fa-search"></span>
                         </button>

@@ -6,6 +6,12 @@ use app\element\ElementFactory;
 
 class UserHelper
 {
+    /**
+     * @param $outputArray
+     * @param string $menuArray
+     * @param string $userData
+     * @return array|false|int|mixed|string|null
+     */
     public function userOutput($outputArray, $menuArray = '', $userData = ''){
         $res    = NULL;
         if(is_array($outputArray)){
@@ -22,6 +28,12 @@ class UserHelper
         return $res;
     }
 
+    /**
+     * @param $output
+     * @param string $menuArray
+     * @param string $userData
+     * @return false|int|mixed|string|null
+     */
     public function getUserOutputDirector($output, $menuArray = '', $userData = ''){
         switch ($output){
             case 'home':
@@ -62,6 +74,10 @@ class UserHelper
         return $res;
     }
 
+    /**
+     * @param $userData
+     * @return false|int|mixed|string|null
+     */
     public function userHomeOutput($userData){
         if($userData[0]['home'] === '1'){
             $homeArray[] = $userData['1'];
@@ -75,6 +91,9 @@ class UserHelper
         return $res;
     }
 
+    /**
+     * @return mixed|null
+     */
     public function userMainOutput(){
         $tplHelper  = new TplHelper();
         $res        = NULL;
@@ -92,6 +111,10 @@ class UserHelper
         return $res;
     }
 
+    /**
+     * @param $userData
+     * @return false|int|mixed|string|null
+     */
     public function userFavOutput($userData){
         $tableHelper = new TableHelper();
         $res = NULL;
@@ -107,6 +130,10 @@ class UserHelper
         return $res;
     }
 
+    /**
+     * @param $userArray
+     * @return mixed|string|null
+     */
     public function userAdjustmentOutput($userArray){
         $res    = NULL;
         if(!empty($_SESSION['username'])){
@@ -117,6 +144,10 @@ class UserHelper
         return $res;
     }
 
+    /**
+     * @param $userArray
+     * @return mixed|string|null
+     */
     public function adminUserOutput($userArray){
         $res    = NULL;
         if($_SESSION['admin']){
@@ -127,6 +158,10 @@ class UserHelper
         return $res;
     }
 
+    /**
+     * @param $userArray
+     * @return mixed|string|null
+     */
     public function adminOutput($userArray){
         $res = NULL;
         if(!empty($_SESSION['admin'])) {

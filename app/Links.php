@@ -138,6 +138,9 @@ class  Links
         elseif(!empty($_POST['user']) || $homePos === FALSE && !empty($_SESSION)){
             $res        = $userContent;
         }
+//        else{
+//            $res = NULL;
+//        }
         return $res;
     }
 

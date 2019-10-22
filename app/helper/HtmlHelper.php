@@ -3,6 +3,11 @@ namespace app\helper;
 
 class HtmlHelper
 {
+    /**
+     * @param $navBtns
+     * @param $navDataArray
+     * @return mixed
+     */
     public function navMenu($navBtns, $navDataArray)
     {
         $tplHelper = new TplHelper();
@@ -16,6 +21,11 @@ class HtmlHelper
         return $navDropdown;
     }
 
+    /**
+     * @param $dropdownArray
+     * @param $template
+     * @return null
+     */
     public function createDropdownBtns($dropdownArray, $template){
         $res = NULL;
         $btns = NULL;
@@ -47,6 +57,11 @@ class HtmlHelper
     }
 
 
+    /**
+     * @param $file
+     * @param $linkArray
+     * @return mixed
+     */
     public function dropdownMenu($file, $linkArray)
     {
         foreach($linkArray as $linkKey => $link){
@@ -61,6 +76,9 @@ class HtmlHelper
         return $dropdown;
     }
 
+    /**
+     * @return false|int|string
+     */
     public function createLoginOutput()
     {
         $tplHelper  = new TplHelper();
@@ -68,6 +86,10 @@ class HtmlHelper
         return $loginForm;
     }
 
+    /**
+     * @param $table
+     * @return string
+     */
     public function closeTable($table)
     {
         $tplHelper  = new TplHelper();
@@ -76,6 +98,12 @@ class HtmlHelper
         return $table;
     }
 
+    /**
+     * @param $toEmbed
+     * @param $token
+     * @param $tmpl
+     * @return mixed
+     */
     public function embedTag($toEmbed, $token, $tmpl){
         $tplHelper  = new TplHelper();
         $embedIn = $tplHelper->searchTemplate($tmpl);
@@ -84,6 +112,11 @@ class HtmlHelper
         return $embedded;
     }
 
+    /**
+     * @param $table
+     * @param $favTags
+     * @return mixed
+     */
     public function createFormTable($table, $favTags)
     {
         if(empty($_SESSION['userId'])){

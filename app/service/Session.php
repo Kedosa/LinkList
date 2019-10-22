@@ -8,6 +8,9 @@ class Session
 {
     protected $id;
 
+    /**
+     * Session constructor.
+     */
     public function __construct()
     {
         if(!isset($_SESSION)){
@@ -30,6 +33,10 @@ class Session
             return 0;
         }
     }
+
+    /**
+     * @param $userArray
+     */
     public function setSessionUserName($userArray)
     {
         $_SESSION   = $userArray;

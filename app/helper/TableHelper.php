@@ -8,11 +8,13 @@ use app\element\ElementFactory;
 
 class TableHelper
 {
+    /**
+     * @param $output
+     * @param string $menuArray
+     * @return false|int|mixed|string|null
+     */
     public function getTableOutputDirector($output, $menuArray = ''){
         switch ($output){
-//            case 'adjust':
-//                $content    = $this->userHomeOutput($menuArray);
-//                break;
             case 'dbManagement':
                 $content = $this->dbAdjustmentOutput($menuArray);
                 break;
@@ -22,9 +24,6 @@ class TableHelper
             case 'add':
                 $content = $this->addLinkOutput($menuArray);
                 break;
-//            case 'toConfig':
-//                $content    = $this->userAdjustmentOutput($menuArray);
-//                break;
             default:
                 $content    = $this->createTable($menuArray);
                 break;
@@ -33,22 +32,27 @@ class TableHelper
         return $res;
     }
 
+    /**
+     * @param $tableData
+     * @return false|int|mixed|string|null
+     */
     public function createTable($tableData){
         $htmlHelper = new HtmlHelper();
-        $table      = 0;
-        $factory    = ElementFactory::getFactory();
+        $tplHelper = new TplHelper();
+        $table = NULL;
+        $factory = ElementFactory::getFactory();
         if(!empty($_GET['searchValue'])){
             if(!empty($tableData)) {
                 $element = $factory->getElement($tableData, 'table', 'table', '');
-                $table   = $element->getValues();
+                $table = $element->getValues();
             }
-            $table       = $this->foundTable($table);
+            $table = $this->foundTable($table);
         }
-        else{
-            $element     = $factory->getElement($tableData, 'table','table', '');
-            $table       = $element->getValues();
+        elseif(!empty($tableData)){
+            $element = $factory->getElement($tableData, 'table','table', '');
+            $table = $element->getValues();
         }
-        $table      = $htmlHelper->closeTable($table);
+        !empty($table) ? $htmlHelper->closeTable($table) : $table = $tplHelper->searchTemplate('noValues');
         return $table;
     }
 
@@ -91,6 +95,10 @@ class TableHelper
         return $res;
     }
 
+    /**
+     * @param $necessaryArray
+     * @return mixed|null
+     */
     public function addLinkOutput($necessaryArray){
         $res = NULL;
         if(!empty($_SESSION['admin'])){
@@ -110,6 +118,10 @@ class TableHelper
         return $res;
     }
 
+    /**
+     * @param $table
+     * @return string
+     */
     public function foundTable($table){
         $res = $table;
         if(empty($table)){

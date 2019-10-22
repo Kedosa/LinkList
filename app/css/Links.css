@@ -347,3 +347,6 @@ button span.fa-star{
 .addLink{
     float: right;
 }
+.error{
+    color: red;
+}

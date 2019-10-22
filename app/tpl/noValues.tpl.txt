@@ -1,0 +1,1 @@
+<h2 class='error';>Fehler: Bitte fügen Sie erstmals Favoriten hinzu sonst können keine angezeigt werden.</h2>

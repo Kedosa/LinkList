@@ -5,6 +5,10 @@ namespace app\helper;
 
 class TplHelper
 {
+    /**
+     * @param $searchedTpl
+     * @return false|int|string
+     */
     public function searchTemplate($searchedTpl){
         $res = 0;
         $tplArray = array(
@@ -33,7 +37,8 @@ class TplHelper
             'adminAddAdmin'     => __DIR__.'/../tpl/adminAddAdmin.tpl.txt',
             'userConfig'        => __DIR__.'/../tpl/userConfig.tpl.txt',
             'userPassword'      => __DIR__.'/../tpl/userPassword.tpl.txt',
-            'option'            => __DIR__.'/../tpl/option.tpl.txt'
+            'option'            => __DIR__.'/../tpl/option.tpl.txt',
+            'noValues'          => __DIR__.'/../tpl/noValues.tpl.txt'
         );
         foreach($tplArray as $tplKey => $tplData){
             if($tplKey === $searchedTpl){

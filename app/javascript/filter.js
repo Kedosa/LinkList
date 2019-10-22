@@ -1,5 +1,15 @@
 function filterString(){
     var input, tdLink, toFilter, table, tr, row, txtLink, tdCategory, txtCategory;
+    // var differentFilter, filter;
+    // differentFilter = document.getElementById('searchedCategory');
+    // if(differentFilter.getElementById("filteredCategory")){
+    //
+    //     differentFilter = differentFilter.getElementById("filteredCategory");
+    //     filter = differentFilter.innerText;
+    //     if(filter){
+    //         filterCategory(filter);
+    //     }
+    // }
     input       = document.getElementById('filterInput');
     toFilter    = input.value.toLowerCase();
     table       = document.getElementsByTagName('table')[0];
@@ -16,9 +26,12 @@ function filterString(){
                 tdCategory = tr[row].getElementsByTagName('td')[1];
                 if(tdCategory){
                     txtCategory = tdCategory.textContent || tdCategory.innerText;
-                    if(txtCategory.toLowerCase().indexOf(toFilter) > -1){
-                        tr[row].style.display = '';
-                    }
+                    // if(differentFilter === ''){
+                        if(txtCategory.toLowerCase().indexOf(toFilter) > -1){
+                            tr[row].style.display = '';
+                        }
+                    // }
+
                 }
             }
         }
@@ -29,10 +42,13 @@ function filterString(){
 
 function filterCategory(element){
     var tdCategory, txtCategory, toFilter, table, tr, row;
-    toFilter    = element.value;
+    toFilter = element;
+    if(element.tagName === 'BUTTON'){
+        toFilter    = element.value;
+    }
     table       = document.getElementsByTagName('table')[0];
     tr          = table.getElementsByTagName('tr');
-    document.getElementById('searchedCategory').innerHTML = 'Es wird nach der Kategorie <b>' + toFilter + '</b> gesucht!';
+    document.getElementById('searchedCategory').innerHTML = 'Es wird nach der Kategorie <b id="filteredCategory">' + toFilter + '</b> gesucht!';
     for(row = 0; row < tr.length; row++) {
         tdCategory  = tr[row].getElementsByTagName('td')[1];
         if(tdCategory){
@@ -74,9 +90,6 @@ function addToAllFavoritesClass(){
     table   = document.getElementById('favTable');
     tr      = table.getElementsByTagName('tr');
     for(row = 0; row < tr.length; row++){
-        // if(row === 0){
-        //     continue;
-        // }
         tdButton    = tr[row].getElementsByTagName('td')[3];
         if(tdButton){
             button  = tdButton.getElementsByClassName('fa-star')[0];
@@ -107,9 +120,6 @@ function highlightStars(favArray){
         }
     }
 }
-
-
-
 // var xhr = new XMLHttpRequest();
 //
 // xhr.open('POST', 'http://localhost/Aufgaben/LinksV2/index.php');
@@ -123,11 +133,6 @@ function highlightStars(favArray){
 //     }
 // };
 // xhr.send(encodeURI('name=Pee' ));
-
-
-{
-
-}
 
 function getNonFavorites() {
     var linkName, row, favArray, hide, jsonArray;
@@ -163,10 +168,19 @@ function plsLogin(){
 }
 
 function resetForm(){
-    var input;
+    var input, differentFilter, filter;
+    differentFilter = document.getElementById('filteredCategory');
+    if(differentFilter){
+        filter = differentFilter.innerText;
+    }
     input = document.getElementById('filterInput');
     input.value = '';
-    filterString("");
+    if(filter){
+        filterCategory(filter);
+    }
+    else{
+        filterString("");
+    }
 
 }
 

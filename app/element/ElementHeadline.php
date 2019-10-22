@@ -4,6 +4,9 @@ namespace app\element;
 
 class ElementHeadline extends BaseElement
 {
+    /**
+     * @return string
+     */
     public function getValues(){
         $token = '####headline####';
 
@@ -28,6 +31,13 @@ class ElementHeadline extends BaseElement
         }
         return $res;
     }
+
+    /**
+     * @param $file
+     * @param $replace
+     * @param $replaceValue
+     * @return mixed
+     */
     public function replaceContentFile($file, $replace, $replaceValue){
         $contentReplaced = str_replace($replace, $replaceValue, $file);
         $res = $contentReplaced;

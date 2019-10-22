@@ -5,6 +5,9 @@ namespace app\element;
 
 class ElementLink extends BaseElement
 {
+    /**
+     * @return mixed|string|null
+     */
     public function getValues(){
         $content    = $this->tplHelper->searchTemplate('tbody');
         if($this->tag === 'nav'){
@@ -27,6 +30,13 @@ class ElementLink extends BaseElement
         return $res;
     }
 
+    /**
+     * @param $file
+     * @param $infoArray
+     * @param $tag
+     * @param null $template
+     * @return mixed|string|null
+     */
     protected function replaceContentLink($file, $infoArray, $tag, $template = NULL){
         $res = NULL;
         if(is_array($infoArray)){

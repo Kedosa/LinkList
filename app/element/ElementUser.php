@@ -6,6 +6,9 @@ namespace app\element;
 
 class ElementUser extends BaseElement
 {
+    /**
+     * @return mixed|string|null
+     */
     public function getValues()
     {
         $res        = NULL;
@@ -26,6 +29,15 @@ class ElementUser extends BaseElement
         return $res;
     }
 
+    /**
+     * @param $userArray
+     * @param $vanillaTemp
+     * @param $tag
+     * @param string $temp
+     * @param string $maxCount
+     * @param string $counter
+     * @return mixed|string
+     */
     public function replaceContent($userArray, $vanillaTemp , $tag, $temp = '', $maxCount = '', $counter = ''){
         !empty($temp) ? $userTemplate = $temp : $userTemplate = $vanillaTemp;
         if(empty($counter) && $tag === 'userTable'){
