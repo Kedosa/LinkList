@@ -1,0 +1,6 @@
+<tr class='####type####'>
+    <td><span class='fa ####icon####'></span><a href="####link####" target="_blank"> ####linkName####</a></td>
+    <td>####type####</td>
+    <td>####comment####</td>
+    <td><button class="dataCog" name='user[linkConfig]' value="####id####"><i class="fa fa-cog"></i></button></td>
+</tr>

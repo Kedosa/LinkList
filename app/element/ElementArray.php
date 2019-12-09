@@ -14,14 +14,14 @@ class ElementArray extends BaseElement
         empty($td) ? $td = NULL : $td;
         $tableData = '';
         $factory = ElementFactory::getFactory();
-        if($this->tag === "table" || $this->tag === 'tableAdjust'){
+        if($this->tag === "table" || $this->tag === 'tableAdjust' || $this->tag === 'userMenuTable'){
             array_unshift($this->data, 0);
         }
         foreach($this->data as $element => $infoArray){
-            if($this->tag === 'table' && $element === 0 || $this->tag === 'tableAdjust' && $element === 0){
+            if($this->tag === 'table' && $element === 0 || $this->tag === 'tableAdjust' && $element === 0 || $this->tag === 'userMenuTable' && $element === 0){
                 $element = 'headline';
             }
-            elseif(is_int($element) && $this->tag === 'table' || is_int($element) && $this->tag === 'tableAdjust'){
+            elseif(is_int($element) && $this->tag === 'table' || is_int($element) && $this->tag === 'tableAdjust' || is_int($element) && $this->tag === 'userMenuTable'){
                 $element = 'block';
             }
             elseif($element === 'name' && $this->tag === 'nav'){
@@ -30,10 +30,9 @@ class ElementArray extends BaseElement
             elseif (is_int($element) && $this->tag === 'navBtn'){
                 $element = 'block';
             }
-            elseif ($this->tag === 'linkAdjust' || $this->tag === 'option'){
+            elseif ($this->tag === 'linkAdjust' || $this->tag === 'userLinkAdjust' || $this->tag === 'option'){
                 $element = 'block';
             }
-
             $element = $factory->getElement($infoArray, $this->tag, $element, $this->template);
             if(!empty($tableData) && $this->tag === 'nav'){
                 $tableData = $tableData.$element->getValues();

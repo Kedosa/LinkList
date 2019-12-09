@@ -1,0 +1,23 @@
+<div class='menuManage'>
+    <h2>Der Link ####linkName#### wird bearbeitet</h2>
+    <div class='adjustForm'>
+        <form action='index.php' method='POST'>
+            <input type='hidden' name='id' value='####id####'/>
+            <label class='inputDesc'>Name: </label><input type='text' name='name' placeholder='####linkName####'/><br />
+            <label class='inputDesc'>Link: </label><input type='text' name='link' placeholder='####link####'/><br />
+            <label class='inputDesc'>Kommentar: </label><input type='text' name='comment' placeholder='####comment####'/><br />
+            <div>Is set ####icon####</div>
+            <label class='inputDesc'>Icons: </label>
+            <select name='iconId' class='selectIcon'>
+                <option value='0'>Bitte wähle ein Icon</option>
+                ####iconOption####
+            </select>
+            <br />
+            <label class='inputDesc'>Privat: </label><input type='checkbox' name='private' class='privateCheck' ####private####/><br />
+            <br />
+            <input type='submit' name='user[saveConfigLink]' class='registerBtn saveManage' value='Speichern'/>
+            <input type='submit' name='user[deleteLink]' class='registerBtn deleteUser' value='Link löschen'/>
+            <input type='submit' name='user[abortManage]' class='registerBtn abortManage' value='Abbrechen'/>
+        </form>
+    </div>
+</div>

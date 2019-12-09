@@ -1,0 +1,10 @@
+<input class='addLink' name='user[addLinkUser]' type='submit' value='neuen Link hinzufügen' />
+<table class='table table-striped table-border table-hover' id='filterTable'>
+    <thead class='bg-info'>
+        <tr>
+            <th>Tabelle mit Links</th>
+            <th>Kategorie</th>
+            <th colspan='2'>Kommentare</th>
+        </tr>
+    </thead>
+    <tbody>

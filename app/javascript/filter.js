@@ -1,15 +1,5 @@
 function filterString(){
     var input, tdLink, toFilter, table, tr, row, txtLink, tdCategory, txtCategory;
-    // var differentFilter, filter;
-    // differentFilter = document.getElementById('searchedCategory');
-    // if(differentFilter.getElementById("filteredCategory")){
-    //
-    //     differentFilter = differentFilter.getElementById("filteredCategory");
-    //     filter = differentFilter.innerText;
-    //     if(filter){
-    //         filterCategory(filter);
-    //     }
-    // }
     input       = document.getElementById('filterInput');
     toFilter    = input.value.toLowerCase();
     table       = document.getElementsByTagName('table')[0];

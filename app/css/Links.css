@@ -192,8 +192,8 @@ table{
     border-color:   indianred;
 }
 
-.test td{
-    border-color:   yellow;
+.user_links td{
+    border-color:   darkgoldenrod;
 }
 
 .other_leoevent td, .other_iapps-workflow td{

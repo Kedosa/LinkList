@@ -6,6 +6,7 @@
     <div id='userMenu'>
     <form name='userMenu' action='index.php' method='post'>
         <button name='user[userAdjustment]' value='1'><i class="fa fa-cog"></i> Einstellungen</button><br />
+        <button name='user[userLinks]' value='1'><i class="fa fa-link"></i> Links Verwaltung</button><br />
         <button name='user[userFavo]' value='1'><span class="fa fa-star"></span> Favoriten anzeigen</button><br />
         <button name='user[logout]' value='1'><span class="fa fa-user-times"></span> Abmelden</button><br />
         ####admin####

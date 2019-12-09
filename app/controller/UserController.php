@@ -60,10 +60,39 @@ class UserController extends BaseController
             case 'deleteUser':
                 $res    = $this->deleteUser($db);
                 break;
+            case 'userLinks':
+                $res    = $this->getUserLinks($db);
+                break;
+            case 'addLinkUser':
+                $res    = $this->fetchIcons($db);
+                break;
+            case 'saveLink':
+                $res    = $this->saveUserLink($db);
+                break;
+            case 'linkConfig':
+                $res = $this->getUserLinktData($db);
+                break;
+            case 'saveConfigLink':
+                $res = $this->saveAdjustedData($db);
+                break;
+            case 'deleteLink':
+                $res = $this->deleteLink($db);
+                break;
             default:
                 $res    = NULL;
                 break;
         }
+        return $res;
+    }
+
+    public function getUserLinktData($db){
+        $menuId = $_POST['user']['linkConfig'];
+        $menuData = $db->fetchMenuData($menuId);
+        $iconData = $db->fetchIcons();
+        $res = [
+            'menuData' => $menuData,
+            'icon' => $iconData,
+        ];
         return $res;
     }
 
@@ -153,7 +182,14 @@ class UserController extends BaseController
     public function deleteUser($db){
         if(!empty($_SESSION['admin'])){
             $userId = $_POST['id'];
+            $userLinkIdArray = $db->fetchUserLinkId($userId);
+            foreach($userLinkIdArray[0] as $userLinkIdKey => $userLinkId){
+                $db->deleteLink($userLinkId);
+                $db->deleteFromUserMenu($userLinkId);
+            }
+            die;
             $db->deleteUser($userId);
+
             header('Location:index.php');
         }
     }
@@ -248,6 +284,86 @@ class UserController extends BaseController
             $res        = $favArray;
         }
         return $res;
+    }
+
+    protected function getUserLinks($db){
+        $res    = NULL;
+        $userId = $_SESSION['userId'];
+        if(!empty($db->fetchUserlinks($userId))){
+            $linkArray  = $db->fetchUserlinks($userId);
+            $res        = $linkArray;
+        }
+        return $res;
+    }
+
+    protected function fetchIcons($db){
+        $res    = NULL;
+        if(!empty($db->fetchIcons())){
+            $iconArray = $db->fetchIcons();
+            $res        = $iconArray;
+        }
+        return $res;
+    }
+
+    public function saveUserLink($db){
+        $res = NULL;
+        if(!empty($_SESSION)){
+            $name = $_POST['name'];
+            $link = $_POST['link'];
+            $comment = $_POST['comment'];
+            $iconId = $_POST['iconId'];
+            !empty($_POST['private']) ? $private = $_POST['private'] : $private = 0;
+            $res = $db->addUserLinkToMenu($name, $link, $comment, $iconId, $private);
+            header('Location:index.php');
+        }
+    }
+
+    public function saveAdjustedData($db){
+        if(!empty($_SESSION['userId'])){
+            if(!empty($_POST)){
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $link = $_POST['link'];
+                $comment = $_POST['comment'];
+                $icon = $_POST['iconId'];
+                $private = $_POST['private'];
+                $private === 'on' ? $private = 1 : $private = 0;
+            }
+            $updateArray = [
+                'id' => $id,
+                'name' => $name,
+                'link' => $link,
+                'comment' => $comment,
+                'icon_id' => $icon,
+                'private' => $private
+            ];
+            $this->updateLinkHelper($db, $updateArray);
+        }
+        header('Location:index.php');
+    }
+
+    public function deleteLink($db){
+        if(!empty($_SESSION['userId'])){
+            $id = $_POST['id'];
+            $db->deleteLink($id);
+            $db->deleteFromFav($id);
+            $db->deleteFromUserMenu($id);
+        }
+        header('Location:index.php');
+    }
+
+    public function updateLinkHelper($db, $updateArray){
+        $id = $updateArray['id'];
+        foreach($updateArray as $updateKey => $updateValue){
+            if(empty($updateValue) || $updateValue === '0' || $updateKey === 'id'){
+                continue;
+            }
+            $sql = 'UPDATE menu SET '.$updateKey.' = :newData WHERE id = :id';
+            if($updateKey === 'private'){
+                $sql = 'UPDATE user_menu SET '.$updateKey.' = :newData WHERE menu_id = :id';
+            }
+            $db->updateLink($sql, $id, $updateValue);
+        }
     }
 
     protected function logoutUser(){

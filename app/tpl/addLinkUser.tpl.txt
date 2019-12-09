@@ -1,0 +1,21 @@
+<div class='addLinkToDb'>
+    <h2>Hier kann ein neuer Link erstellt werden</h2>
+    <div class='adjustForm'>
+        <form action='index.php' method='POST'>
+            <label class='inputDesc'>Name: </label><input type='text' name='name'/><br />
+            <label class='inputDesc'>Link: </label><input type='text' name='link'/><br />
+            <label class='inputDesc'>Kommentar: </label><input type='text' name='comment'/><br />
+            <label class='inputDesc'>Icons: </label>
+            <select name='iconId' class='selectIcon'>
+                <option value='0'>Bitte wähle eine Kategorie</option>
+                ####iconOption####
+            </select>
+            <br />
+            <label class='inputDesc'>Privat: </label><input type='checkbox' name='private'/><br />
+            <br />
+            <br />
+            <input type='submit' name='user[saveLink]' class='registerBtn saveManage' value='Speichern'/>
+            <input type='submit' name='user[abortManage]' class='registerBtn abortManage' value='Abbrechen'/>
+        </form>
+    </div>
+</div>

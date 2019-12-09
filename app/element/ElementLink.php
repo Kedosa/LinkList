@@ -16,15 +16,18 @@ class ElementLink extends BaseElement
         elseif($this->tag === 'tableAdjust'){
             $content = $this->tplHelper->searchTemplate('tbodyDbConfig');
         }
+        elseif($this->tag === 'userMenuTable'){
+            $content = $this->tplHelper->searchTemplate('userTbLink');
+        }
         elseif($this->tag === 'option'){
             $content = $this->tplHelper->searchTemplate('option');
         }
         elseif($this->tag === 'linkAdjust'){
             $content = $this->tplHelper->searchTemplate('menuConfigForm');
         }
-//        elseif($this->tag === 'linkAdd'){
-//            $content = $this->tplHelper->searchTemplate('newLink');
-//        }
+        elseif($this->tag === 'userLinkAdjust'){
+            $content = $this->tplHelper->searchTemplate('userLinkConfig');
+        }
         $content    =  $this->replaceContentLink($content, $this->data, $this->tag, $this->template);
         $res        = $content;
         return $res;
@@ -41,18 +44,15 @@ class ElementLink extends BaseElement
         $res = NULL;
         if(is_array($infoArray)){
             foreach($infoArray as $infoKey => $infoData) {
+
                 $token  = '####' . $infoKey . '####';
                 if($infoKey === 'favorite'){
                     !empty($infoData) ? $infoData = 'addFavorite' : $infoData = '';
                 }
-                if (empty($template) && strcmp($token, $file)) {
-                    empty($infoData) ? $infoData = 'Kein Kommentar' : $infoData;
-                    $file = str_replace($token, $infoData, $file);
+                elseif($infoKey === 'private'){
+                    $infoData === '1' ? $infoData = 'checked' : $infoData = '';
                 }
-                elseif(strcmp($token, $template) && $tag === 'nav'){
-                    $template = str_replace($token, $infoData, $template);
-                }
-                elseif (strcmp($token, $template)) {
+                if (strcmp($token, $template)) {
                     empty($infoData) ? $infoData = 'Kein Kommentar' : $infoData;
                     $template = str_replace($token, $infoData, $template);
                     $file = str_replace($token, $infoData, $file);
@@ -65,8 +65,8 @@ class ElementLink extends BaseElement
             $template = str_replace($token, $infoData, $file);
         }
 
-        if($tag === 'table' || $tag === 'tableAdjust'){
-            !empty($_SESSION['admin']) ? $file = str_replace('####jsFunction####', 'favorite(this)', $file) : $file = str_replace('####jsFunction####', 'plsLogin()', $file);
+        if($tag === 'table' || $tag === 'tableAdjust' || $tag === 'userMenuTable'){
+            !empty($_SESSION['userId']) ? $file = str_replace('####jsFunction####', 'favorite(this)', $file) : $file = str_replace('####jsFunction####', 'plsLogin()', $file);
             $findToken = strpos($file, '####linkName');
             if($findToken !== FALSE){
                 $res = $template;
@@ -84,13 +84,10 @@ class ElementLink extends BaseElement
                 $res = $template.$file;
             }
         }
-        elseif($tag === 'searched'){
-            $res = $template.$file;
-        }
         elseif($tag === 'option'){
             $res = $template.$file;
         }
-        elseif($tag === 'linkAdjust'){
+        elseif($tag === 'linkAdjust' || $tag === 'userLinkAdjust'){
             $res = $file;
         }
         return $res;

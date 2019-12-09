@@ -1,6 +1,7 @@
 <?php
 
 namespace app\controller;
+use app\helper\HtmlHelper;
 use       app\service\UserDB,     app\service\Session,
           app\helper\ArrayHelper, app\helper\TplHelper;
 
@@ -10,6 +11,7 @@ abstract class BaseController
     protected $session;
     protected $arrayHelper;
     protected $tplHelper;
+    protected $htmlHelper;
     protected $cfg;
 
     public function __construct()

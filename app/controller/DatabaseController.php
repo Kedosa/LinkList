@@ -102,7 +102,7 @@ class DatabaseController extends BaseController{
                 !empty($_POST['comment']) ? $comment = $_POST['comment'] : $comment = '';
                 !empty($_POST['iconId'])  ? $icon = $_POST['iconId'] : $icon = '';
                 $category = $_POST['categoryId'];
-                $db->addToMenu($name, $category, $link, $comment, $icon);
+                $db->addToMenu($name, $category, $link, $comment, $icon, 1);
             }
 
         }
@@ -126,6 +126,7 @@ class DatabaseController extends BaseController{
             $id = $_POST['id'];
             $db->deleteLink($id);
             $db->deleteFromFav($id);
+            $db->deleteFromUserMenu($id);
         }
         header('Location:index.php');
     }

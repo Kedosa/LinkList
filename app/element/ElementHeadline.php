@@ -17,6 +17,7 @@ class ElementHeadline extends BaseElement
                 $res = $this->template;
             }
         }
+
         if($this->tag === 'tableAdjust'){
             $tableBeginContent = $this->tplHelper->searchTemplate('tableConfig');
             $res = $tableBeginContent.$this->template;
@@ -28,6 +29,13 @@ class ElementHeadline extends BaseElement
             $navTpl = $this->tplHelper->searchTemplate('button');
             $navItem = $this->replaceContentFile($navTpl, $token, $this->data);
             $res = $this->template.$navItem;
+        }
+        if($this->tag === 'userMenuTable'){
+            $tableBeginContent = $this->tplHelper->searchTemplate('userLinks');
+            $res = $tableBeginContent.$this->template;
+            if(!empty($this->template)){
+                $res = $this->template;
+            }
         }
         return $res;
     }

@@ -56,8 +56,14 @@ class UserHelper
             case 'userToManage':
                 $content    = $this->adminUserOutput($userData);
                 break;
-            case 'addToDb':
-                $content    = $this->adminDbOutput($menuArray);
+            case 'userLinks':
+                $content    = $this->userLinkOutput($userData[0]);
+                break;
+            case 'addLinkUser':
+                $content    = $this->userAddLinkOutput($userData[0]);
+                break;
+            case 'linkConfig':
+                $content = $this->userLinkConfigOutput($userData[0]);
                 break;
             default:
                 $content    = NULL;
@@ -74,6 +80,22 @@ class UserHelper
         return $res;
     }
 
+    public function userLinkConfigOutput($linkArray){
+        $res = NULL;
+        if(!empty($_SESSION['admin'])){
+            $iconArray = $linkArray['icon'];
+            $menuDataArray[] = $linkArray['menuData'];
+            $factory = ElementFactory::getFactory();
+            $elementIcon = $factory->getElement($iconArray, 'option', '', '');
+            $iconOption = $elementIcon->getValues();
+            $elementLink = $factory->getElement($menuDataArray, 'userLinkAdjust', 'table', '');
+            $link  = $elementLink->getValues();
+            $link = str_replace('####iconOption####', $iconOption, $link);
+            $res = $link;
+        }
+        return $res;
+    }
+
     /**
      * @param $userData
      * @return false|int|mixed|string|null
@@ -81,9 +103,7 @@ class UserHelper
     public function userHomeOutput($userData){
         if($userData[0]['home'] === '1'){
             $homeArray[] = $userData['1'];
-
             $res    = $this->userFavOutput($homeArray);
-
         }
         else{
             $res   = "HOME";
@@ -172,5 +192,33 @@ class UserHelper
         return $res;
     }
 
+    public function userLinkOutput($userMenuArray){
+        $res = NULL;
+        if(!empty($_SESSION)){
+            $htmlHelper = new HtmlHelper();
+            $tplHelper = new TplHelper();
+            $table = $tplHelper->searchTemplate('userAddLinkBtn');
+            $factory = ElementFactory::getFactory();
+            if(!empty($userMenuArray)){
+                $element = $factory->getElement($userMenuArray, 'userMenuTable','table', '');
+                $table = $element->getValues();
+                $table = $htmlHelper->embedTag($table, 'table', 'tableForm');
+            }
+
+            return $table;
+        }
+    }
+    public function userAddLinkOutput($iconArray){
+        $res = NULL;
+        if(!empty($_SESSION)){
+            $htmlHelper = new HtmlHelper();
+            $factory = ElementFactory::getFactory();
+            $elementIcon = $factory->getElement($iconArray, 'option', '', '');
+            $iconOption = $elementIcon->getValues();
+            $link = $htmlHelper->embedTag($iconOption, 'iconOption', 'userAddLink');
+            $res = $link;
+        }
+        return $res;
+    }
 
 }

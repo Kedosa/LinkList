@@ -36,7 +36,12 @@ class TplHelper
             'adminAdjustment'   => __DIR__.'/../tpl/adminAdjustment.tpl.txt',
             'adminAddAdmin'     => __DIR__.'/../tpl/adminAddAdmin.tpl.txt',
             'userConfig'        => __DIR__.'/../tpl/userConfig.tpl.txt',
+            'userLinks'         => __DIR__.'/../tpl/userLinks.tpl.txt',
+            'userAddLink'       => __DIR__.'/../tpl/addLinkUser.tpl.txt',
+            'userAddLinkBtn'    => __DIR__.'/../tpl/addUserLinkBtn.tpl.txt',
             'userPassword'      => __DIR__.'/../tpl/userPassword.tpl.txt',
+            'userTbLink'        => __DIR__.'/../tpl/userTbLinks.tpl.txt',
+            'userLinkConfig'    => __DIR__.'/../tpl/userLinkConfig.tpl.txt',
             'option'            => __DIR__.'/../tpl/option.tpl.txt',
             'noValues'          => __DIR__.'/../tpl/noValues.tpl.txt'
         );
