@@ -36,8 +36,8 @@ function filterCategory(element){
     if(element.tagName === 'BUTTON'){
         toFilter    = element.value;
     }
-    table       = document.getElementsByTagName('table')[0];
-    tr          = table.getElementsByTagName('tr');
+    table = document.getElementsByTagName('table')[0];
+    tr = table.getElementsByTagName('tr');
     document.getElementById('searchedCategory').innerHTML = 'Es wird nach der Kategorie <b id="filteredCategory">' + toFilter + '</b> gesucht!';
     for(row = 0; row < tr.length; row++) {
         tdCategory  = tr[row].getElementsByTagName('td')[1];
@@ -175,12 +175,17 @@ function resetForm(){
 }
 
 function openCanvas() {
-    var bars, userMenu;
+    var bars, userMenu, userManage;
+    userManage =     document.getElementsByClassName("userManage")[0];
     userMenu    = document.getElementById("userCanvas");
     bars        = document.getElementById("userBars");
     userMenu.style.width = "250px";
+    userManage.style.marginLeft = "-250px";
+    userManage.style.marginTop = "58.2px";
     bars.classList.add('hide');
     document.getElementsByClassName("content")[0].style.marginLeft = "250px";
+    document.getElementsByClassName("willkommen")[0].style.marginLeft = "-250px";
+
 }
 
 function closeCanvas() {
@@ -190,4 +195,6 @@ function closeCanvas() {
     userMenu.style.width = "0";
     bars.classList.remove('hide');
     document.getElementsByClassName("content")[0].style.marginLeft= "0";
+    document.getElementsByClassName("willkommen")[0].style.marginLeft = "0";
+    document.getElementsByClassName("userManage")[0].style.marginLeft = "0";
 }

@@ -3,7 +3,7 @@ nav{
     border-color:   #b3b3b3;
 }
 form.form-inline{
-    padding-top:    0px;
+    padding-top:    0;
 }
 
 .search{
@@ -16,15 +16,15 @@ h4{
     text-align:     center;
 }
 h2.willkommen {
-    font-size: 2rem;
-    text-align: center;
+    font-size:      2rem;
+    text-align:     center;
 }
 
 .adjust{
-    color: #343a40;
+    color:          #343a40;
     background-color: #f8f9fa;
-    border: none;
-    font-size: 40px;
+    border:         none;
+    font-size:      40px;
 }
 
 a.navbar-brand{
@@ -270,83 +270,88 @@ table{
 }
 
 .logoutItems{
-    margin-top: 50px;
-    margin-left: 48%;
+    margin-top:     50px;
+    margin-left:    48%;
 }
 
 .logoutBtn{
-    margin-top: 10px;
-    margin-left: 25px;
+    margin-top:     10px;
+    margin-left:    25px;
 }
 
 .userCanvas {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
+    height:         100%;
+    width:          0;
+    position:       fixed;
+    z-index:        1;
+    top:            0;
+    left:           0;
     background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    overflow-x:     hidden;
+    transition:     0.5s;
+    padding-top:    60px;
 }
 .fa-bars, .fa-times{
-    font-size:  25px!important;
-    cursor:     pointer;
-    position: absolute;
-    top: 60px;
-    left: 5px;
+    font-size:      25px!important;
+    cursor:         pointer;
+    position:       absolute;
+    top:            60px;
+    left:           5px;
 }
 
 #closeMenu {
-    font-size:  25px;
-    position:   absolute;
-    top:        60px;
-    left:       200px;
+    font-size:      25px;
+    position:       absolute;
+    top:            60px;
+    left:           200px;
 }
 #userMenu {
-    top:        20px;
-    position:   relative;
-    left:       15px;
+    top:            20px;
+    position:       relative;
+    left:           15px;
+    width:          calc(100% - 15px);
 }
 div#userMenu form button{
-    border:     none;
+    border:         none;
     margin-bottom: 10px;
+    white-space:    nowrap;
+}
+#userMenu h5{
+    white-space:    nowrap;
 }
 button span.fa-star{
-    color:      white;
+    color:          white;
 }
 .hide{
-    display:    none !important;
+    display:        none !important;
 }
 
 .saveManage{
-    margin-left:   0;
+    margin-left:    0;
 }
 .adjustForm, .userManage{
-    margin-top: 4%;
-    text-align: center;
+    margin-top:     4%;
+    text-align:     center;
 }
 .adjustForm label{
-    text-align: left;
+    text-align:     left;
     width:          120px;
 }
 
 .dataCog {
-    border: none;
+    border:         none;
     background-color: unset;
-    color: #343a40;
+    color:          #343a40;
 }
 
 .userCog{
-    border: none;
+    border:         none;
     background-color: unset;
-    color: #343a40;
+    color:          #343a40;
 }
 .addLink{
-    float: right;
+    float:          right;
 }
 .error{
-    color: red;
+    color:          red;
 }
